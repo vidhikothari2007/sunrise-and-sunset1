@@ -46,25 +46,30 @@ function draw(){
 
 
 async function getbgImg(){
-    var response= await fetch('http://worldtimeapi.org/api/timezone/Asia/Tokyo')
+    var response= await fetch('http://worldtimeapi.org/api/timezone/Asia/Kolkata')
     var responseJson=  await response.json();
     console.log(responseJson)
     var dateTime= responseJson.datetime
     var hour= dateTime.slice(11,13)
     if(hour>=04 && hour<=06){
-        debugger;bg= 'sunrise1.png'
+        //debugger;
+        bg= 'sunrise1.png'
     }
     else if(hour>=06 && hour<=08){
-        debugger;bg = 'sunrise2.png'
+        //debugger;
+        bg = 'sunrise2.png'
     }
     else if(hour>=23 && hour==0){
-        debugger;bg = 'sunrise10.png'
+        //debugger;
+        bg = 'sunrise10.png'
     }
     else if(hour==0 && hour<=03){
-        debugger;bg = 'sunrise11.png'
+        //debugger;
+        bg = 'sunrise11.png'
     }
     else{
-        debugger;bg= 'sunset12.png'
+        //debugger;
+        bg= 'sunset12.png'
     }
     
     backgroundImg=loadImage(bg)
